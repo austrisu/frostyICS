@@ -7,7 +7,7 @@ Industrial control system cyber range with objective to disrupt heating system.
 
 # Structure
 
-![image-20210418112056257](C:\Users\austris\Desktop\frostyICS\doc\img\image-20210418112056257.png)
+![image-20210418112056257](.\doc\img\image-20210418112056257.png)
 
 # Requirements
 
