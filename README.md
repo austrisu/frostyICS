@@ -1,37 +1,34 @@
 # frostyICS &#127981;
-Industrial control system cyber range with objective to disrupt heating system
+Industrial control system cyber range with objective to disrupt heating system.
+
+# General
 
 
-
-
-
-# frostyICS
-
-# About
-
-Get from similar cyber ranges
 
 # Structure
 
-Network topology
+![image-20210418112056257](C:\Users\austris\Desktop\frostyICS\doc\img\image-20210418112056257.png)
 
-# Requrements
+# Requirements
 
 ## Hardware
 
-Table PLC - s71200 - mlfb (can be also alternative models vai tikai mlfb daļu norādīt)
-
-PLC - LOGO! 8.3
-
-Industrial PC - IOT2040 or IOT2050 or can be replaced with virtual machines (to visu ar svitchiem virtuālajiem var laist caur 1nu pc)
+| Element                                       | Description                                                |
+| --------------------------------------------- | ---------------------------------------------------------- |
+| PLC - s71200                                  | mlfb and links and alternative mlfbs (Link to uni package) |
+| PLC - LOGO! 8.2                               | mlfb and link (Link to uni package)                        |
+| webSCADA - industrial PC - iot2040 or iot2050 | mlfb and link                                              |
 
 ## Software
 
-TIA portal - link for trial + installation of TIA portal 
 
-LOGO! Softcomfort (maybe free version available?)
 
-Windows 7 or higher (for this setup windows 7 is used)
+| ..                       | Description                                                  |
+| ------------------------ | ------------------------------------------------------------ |
+| TIA portal V15 or higher | link for trial (MLFB) link for university package            |
+| LOGO! Softcomfort        | link + mlfb (link to trial but cant upload to logo). Link for university package |
+| NodeRed                  | link to node red                                             |
+| Windows 7 or higher      | Can be as main operation system or as wirtual machine. I suggest using two diferent Win machines, one as SCADA machine for actual network and second as enginering station. Bouth will contain TIA portal but it will be simpler to deploy everithing. |
 
 # Installation
 
@@ -43,6 +40,14 @@ Windows 7 or higher (for this setup windows 7 is used)
 
 More information:   [installation.md](./doc/installation.md) 
 
+
+
+TIA portal usage:  [TIA_portal_explained.md](doc\TIA_portal_explained.md) 
+
+
+
+LOGO! SoftComfort usage:  [LOGO!_SoftComfort_explained.md](doc\LOGO!_SoftComfort_explained.md) 
+
 # Attack scenarios
 
 Idea is that attacker is outside of the network 
@@ -53,4 +58,6 @@ Owerview
 - Modbus attacks
 - S7comm attacks links uz vairāk info un poc
 
-# How to support
+ [attacks.md](/doc/attacks.md) 
+
+# Future work
