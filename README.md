@@ -9,6 +9,16 @@ Industrial control system cyber range with objective to disrupt heating system.
 
 ![image-20210418112056257](./doc/img/image-20210418112056257.png)
 
+# Working principle
+
+## Heating system
+
+
+
+## Warehouse management system
+
+
+
 # Requirements
 
 ## Hardware
@@ -57,6 +67,12 @@ Owerview
 - Compromisin ICS perimiter, gain acces to web SCADA
 - Modbus attacks
 - S7comm attacks links uz vairāk info un poc
+
+
+
+## Introdeuced vulnerabilities and misconfigurations
+
+
 
  [attacks.md](/doc/attacks.md) 
 
