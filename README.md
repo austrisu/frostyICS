@@ -41,7 +41,7 @@ Windows 7 or higher (for this setup windows 7 is used)
 - Logo same instr
 - Industrial PC - yocta install for siemens link where to find + nodeder install + importing the program
 
-More information:   [installation.md](.\doc\installation.md) 
+More information:   [installation.md](./doc/installation.md) 
 
 # Attack scenarios
 
