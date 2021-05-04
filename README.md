@@ -1,9 +1,9 @@
 # frostyICS &#127981;
 Industrial control system cyber range with objective to disrupt heating system.
 
-# General
+# TL;DR
 
-
+No shortcuts
 
 # Topology
 
@@ -52,43 +52,18 @@ Following software requirements are listed in table bellow:
 | Software                 | Description                                                  |
 | ------------------------ | ------------------------------------------------------------ |
 | TIA portal V15 or higher | For trial period can be downloaded from here https://support.industry.siemens.com/cs/document/109761045/simatic-step-7-and-wincc-v15-1-trial-download . This is link for 15.1 version, project version should match with TIAportal version. It is important to note that to get this trial can take up to several day as registration to Siemens site takes some time |
-| LOGO! Softcomfort        | LOGO! soft comfort has trial, however it doesn't has capability to upload project to PLC. Full version can be bought. Unfortunately currently software can be bought in CD and cant be downloaded. You should consult with Siemens representatives in your country. This software is relatively cheep, you could cut on some bears and you will have this software :) |
+| LOGO! Softcomfort        | LOGO! soft comfort has trial, however it doesn't has capability to upload project to PLC https://new.siemens.com/global/en/products/automation/systems/industrial/plc/logo/logo-software.html#Demosoftware. Full version can be bought. Unfortunately currently software can be bought in CD and cant be downloaded. You should consult with Siemens representatives in your country. This software is relatively cheep, you could cut on some bears and you will have this software :) |
 | NodeRed                  | https://nodered.org/                                         |
 | Windows 7 or higher      | Can be as main operation system or as virtual machine. I suggest using two different Win machines, one as SCADA machine for actual network and second as engineering station. Both will contain TIA portal but it will be simpler to deploy everything. |
 
-# Installation
+# Installation and project uploading
 
--  SCADA Windows installation + tiaportal installation + importing project in to tiaportal
-- Enginering station for configuring PLCs - tiaportal install + logo aoftcomfort install
-- 1200 config - project importing + adjustment like IP etc
-- Logo same instr
-- Industrial PC - yocta install for siemens link where to find + nodeder install + importing the program
-
-More information:   [installation.md](./doc/installation.md) 
+- TiaPortal v15 and v16 software installation and project uploading is explained here   [TIAportal installation](./doc/tia-portal-installation.md) 
+- TIAportal usage are described here  [youtube](https://www.youtube.com/watch?v=GgKMGj0aXQw) 
+- LOGO! Soft Comfort installation and project upload is described here [LOGO installation](./doc/logo-project-installation.md)
+- LOGO! SoftComfort usage are best explained here:  [Youtube playlist](https://www.youtube.com/watch?v=xbK3ngp70hM&list=PLRtRKudOMmtFVIVcH0AMX4h9rszwDPXEE) 
 
 
 
-TIA portal usage:  [TIA_portal_explained.md](doc\TIA_portal_explained.md) 
 
-
-
-LOGO! SoftComfort usage:  [LOGO!_SoftComfort_explained.md](doc\LOGO!_SoftComfort_explained.md) 
-
-# Attack scenarios
-
-Idea is that attacker is outside of the network 
-
-Owerview
-
-- Compromisin ICS perimiter, gain acces to web SCADA
-- Modbus attacks
-- S7comm attacks links uz vairāk info un poc
-
-
-
-## Introdeuced vulnerabilities and misconfigurations
-
-
-
- [attacks.md](/doc/attacks.md) 
 
