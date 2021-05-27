@@ -127,8 +127,8 @@ Additional information about used software in in the project:
 
 # Installation instructions
 
-- TiaPortal v15 and v16 project upload to the S7-1200   [tia-portal-upload.md](./docs/tia-portal-upload.md) 
-- LOGO! Soft Comfort installation and project upload is described here [logo-project-upload.md](./docs/logo-project-upload.md)
+- TiaPortal v15 and v16 project upload to the S7-1200   [tia-portal-upload.md](docs/s71200-project-upload.md) 
+- LOGO! Soft Comfort installation and project upload is described here [logo-project-upload.md](docs/logo-project-upload.md)
 
 ## Test excersise scenario
 
