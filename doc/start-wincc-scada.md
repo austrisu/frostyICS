@@ -1,8 +1,8 @@
 # Starting winCC SCADA
 
-Check  [tia-portal-installation.md.md](tia-portal-installation.md.md) for instruction how to import the project.
+Check  [tia-portal-installation.md.md](tia-portal-installation.md) for instruction how to import the project.
 
-After configuration of IP ranges wincc runtime can be started.
+After configuration of IP ranges Wincc runtime can be started.
 
 ![image-20210504211755935](start-wincc-scada.assets/image-20210504211755935.png)
 
