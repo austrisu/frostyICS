@@ -3,17 +3,19 @@ Industrial control system cyber range with objective to disrupt heating system.
 
 # TL;DR
 
-No shortcuts
+This is a cyber range containing two physical systems (Heating plant and warehouse management system). Heat plant controls heat supply to the city districts, and warehouse management system controls warehouse lights and alarms. This cyber range consists of 4 main components 2 SCADAs and 2 PLCs. Mainly Siemens products are used in this project.
 
 # Topology
 
-Cyber range network topology is shown bellow. System consists of two PLC's, SCADA and WEB-SCADA. So  CR can be divided in to control and execution sections. Control section contains SCADA and execution contains PLC's. For PLC S7-1200 in CR hardware-in-the-loop (HIL) is used to simulate heating process. HIL consists of simplified mathematics model of the physical heating process. HIL includes and controls nominal values of physical process so that process can be damages if nominal values are exceeded. For PLC LOGO! there is no complex physical process to simulate as the PLC LOGO! controls state of lights and alarm.
+Cyber range network topology is shown below. The system consists of two PLCs, SCADA and WEB-SCADA. So  CR can be divided into control and execution sections. The Control section contains SCADA, and execution contains PLCs. For PLC S7-1200 in CR, hardware-in-the-loop (HIL) is used to simulate the heating process. HIL consists of a simplified mathematical model of the physical healing process. HIL includes and controls nominal values of the physical process to be damaged if nominal values are exceeded. For PLC LOGO! There is no complex physical process to simulate as the PLC LOGO! controls state of lights and alarm.
 
-For operator to visualize and interact with process SCADAS are used in this case. SCADA can be used also for attacker to understand the state and purpose of the system. Heating process is visualized using WinCC SCADA. WinCC is the run-time of the SCADA program and can be created in TIA portal. WinCC is computer software hence can be run in Windows virtualized environment making it easier to reproduce and expand. Windows can also increase attack surface of the CR. Also SCADA and engineering software for most of the vendors can be downloaded and used for trail period which is financially favorable solution.
+For the operator to visualize and interact with the process, SCADAS is used in this case. SCADA can also be used for the attacker to understand the state and purpose of the system. The heating process is visualized using WinCC SCADA. WinCC is the run-time of the SCADA program and can be created in the TIA portal. WinCC is computer software hence can be run in Windows virtualized environment, making it easier to reproduce and expand. Windows can also increase the attack surface of the CR. Also, SCADA and engineering software for most of the vendors can be downloaded and used for the trial period, which is a financially favorable solution.
 
-![image-20210527201603455](doc/img/image-20210527201603455.png)
+The SCADA and PLC S7-1200 were configured and programmed utilizing Siemens software TIA Portal. The TIA Portal is a multipurpose platform that allows the program PLCs and other peripheral devices like networking elements, HMI's, SCADA. TIA Portal allows fully functional simulation and emulation of the programmed environment. TIA Portal allows access to the devices online. It also allows the user to access the diagnostics functionality embedded in the devices in real-time.
 
-The SCADA and PLC S7-1200 was configured and programmed utilizing Siemens software TIA Portal. The TIA Portal is a multipurpose platform which allows to program the PLC's and other peripheral devices like networking elements, HMI's, SCADA. TIA Portal allows fully functional simulation and emulation of the programmed environment. TIA Portal allows to access the devices online. It also allows the user to access the diagnostics functionality embedded in the devices in real time.
+![image-20210527201603455](./docs/img/image-20210527201603455.png)
+
+
 
 # Working principle
 
@@ -25,9 +27,9 @@ Logic and Heating process simulation is on S7-1200 PLC and visualization are in 
 
 SCADA HMI visualization of the heating plant is shown bellow. The heating plant consists of:
 
-- Heating transmission line - transports \gls*{htf} to the city;
+- Heating transmission line - transports heat transfer fluid (HTF) to the city;
 - Circulation pump (A1) - forces the HTF flow to the city;
-- Transmission line valve (A3) - required to be open for the \gls*{htf} to circulate;
+- Transmission line valve (A3) - required to be open for the HTF to circulate;
 - Gas flow valve (A2) - control the burning temperature of the gas in the burning chamber;
 - Temperature and pressure sensors (S3, S4) - to monitor and give feedback to the control system about temperature and pressure in HTF tank;
 - Flow speed sensor (S1) - To monitor and give feedback to the control system about the state of the HTF flow speed.
@@ -43,13 +45,23 @@ The heating process can be divided into two phases. One of the phases is the hea
 
 
 
-![image-20210527202214373](doc/img/image-20210527202214373.png)
+![image-20210527202214373](./docs/img/image-20210527202214373.png)
 
 
 
 ## Warehouse management system
 
 Logic of warehouse management runs on LOGO! and visualization resides on WEB-SCADA
+
+Warehouse management in this CR is used to control alarms and lights. This process is much simpler than the heating plant. Siemens LOGO! 8.2 PLC is used to control it as it is meant for simple applications. LOGO! can have different configurations depending on added functional modules. In this CR LOGO! 8.2 basic module is used with built-in I/O and communication interface.
+
+![image-20210527202345694](./docs/img/image-20210527202345694.png)
+
+
+
+# Requirements
+
+Following are hardware and software required to set up the lab. Additionally alternatives for each device are briefly described. To check device parameters and search for MLFB codes Siemens SIOS website can be used https://support.industry.siemens.com/ .
 
 <table>
 <thead>
@@ -78,7 +90,7 @@ Logic of warehouse management runs on LOGO! and visualization resides on WEB-SCA
   <tr>
     <td rowspan="3">2</td>
     <td rowspan="3">WEB-SCADA</td>
-    <td>NodeRed V1.0.0 \footnote{NodeRED&nbsp;&nbsp;&nbsp;- Low-code programming platform for event-driven applications&nbsp;&nbsp;&nbsp;\href{https://nodered.org/}{https://nodered.org/} }</td>
+    <td>NodeRed V1.0.0</td>
     <td>n/a</td>
   </tr>
   <tr>
@@ -104,39 +116,40 @@ Logic of warehouse management runs on LOGO! and visualization resides on WEB-SCA
 </tbody>
 </table>
 
-Warehouse management in this CR is used to control alarms and lights. This process is much simpler than the heating plant. Siemens LOGO! 8.2 PLC is used to control it as it is meant for simple applications. LOGO! can have different configurations depending on added functional modules. In this CR LOGO! 8.2 basic module is used with built-in I/O and communication interface.
-
-![image-20210527202345694](doc/img/image-20210527202345694.png)
-
-
-
-# Requirements
-
-## Hardware
-
-Following are hardware required to set up the lab. Additionally alternatives for each device are briefly described. To check device parameters and search for MLFB codes SIemens SIOS siste can be used https://support.industry.siemens.com/ .
-
-
-
-## Software
-
-Following software requirements are listed in table bellow:
+Additional information about used software in in the project:
 
 | Software                 | Description                                                  |
 | ------------------------ | ------------------------------------------------------------ |
 | TIA portal V15 or higher | For trial period can be downloaded from here https://support.industry.siemens.com/cs/document/109761045/simatic-step-7-and-wincc-v15-1-trial-download . This is link for 15.1 version, project version should match with TIAportal version. It is important to note that to get this trial can take up to several day as registration to Siemens site takes some time |
 | LOGO! Softcomfort        | LOGO! soft comfort has trial, however it doesn't has capability to upload project to PLC https://new.siemens.com/global/en/products/automation/systems/industrial/plc/logo/logo-software.html#Demosoftware. Full version can be bought. Unfortunately currently software can be bought in CD and cant be downloaded. You should consult with Siemens representatives in your country. This software is relatively cheep, you could cut on some bears and you will have this software :) |
 | NodeRed                  | https://nodered.org/                                         |
-| Windows 7 or higher      | Can be as main operation system or as virtual machine. I suggest using two different Win machines, one as SCADA machine for actual network and second as engineering station. Both will contain TIA portal but it will be simpler to deploy everything. |
+| Windows 7 or higher      | Can be run in virtual machine. I suggest using two different WIN machines, one as SCADA machine for actual network and second as engineering station. Both will contain TIAportal and heating [project](https://github.com/austrisu/frostyICS/tree/main/config_files/S7-1200%20and%20wincc), but it will be simpler to deploy everything. |
 
-# Installation and project uploading
+# Installation instructions
 
-- TiaPortal v15 and v16 software installation and project uploading is explained here   [TIAportal installation](./doc/tia-portal-installation.md) 
-- TIAportal usage are described here  [youtube](https://www.youtube.com/watch?v=GgKMGj0aXQw) 
-- LOGO! Soft Comfort installation and project upload is described here [LOGO installation](./doc/logo-project-installation.md)
-- LOGO! SoftComfort usage are best explained here:  [Youtube playlist](https://www.youtube.com/watch?v=xbK3ngp70hM&list=PLRtRKudOMmtFVIVcH0AMX4h9rszwDPXEE) 
+- TiaPortal v15 and v16 project upload to the S7-1200   [tia-portal-upload.md](./docs/tia-portal-upload.md) 
 
+- LOGO! Soft Comfort installation and project upload is described here [logo-project-upload.md](./docs/logo-project-upload.md)
 
+# Resources
+
+TIAportal and WinCC (S7-1200 and SCADA)
+
+- TIAportal trial download - https://support.industry.siemens.com/cs/document/109761045/simatic-step-7-and-wincc-v15-1-trial-download 
+- TIAportal usage are described here  - https://www.youtube.com/watch?v=GgKMGj0aXQw
+- Getting and isntalling TIA  Portal V15 and V16 - https://www.youtube.com/watch?v=xE25v2Y2_t4&list=PLtGimRyb0S0ivKG6RsDWTtPSyOZ_iqS3b
+- TIA  Portal Hardware configuration - https://www.youtube.com/watch?v=lqHIKYUWXvs&list=PLtGimRyb0S0ivKG6RsDWTtPSyOZ_iqS3b&index=2
+- TIA Portal HMI programming - https://www.youtube.com/watch?v=cUN7lic-1hE&list=PLtGimRyb0S0hgH5mWFTIo1DkP0kiG-qhU
+- TIA Portal programming full course - https://www.youtube.com/channel/UC1P4ACs0hsr7AWcl-mWKQbQ/playlists
+
+LOGO!
+
+- LOGO! SoftComfort usage are best explained here - https://www.youtube.com/watch?v=xbK3ngp70hM&list=PLRtRKudOMmtFVIVcH0AMX4h9rszwDPXEE
+
+Additional
+
+- Search for different Siemens related questions about hardware and software - https://support.industry.siemens.com
+- Additional information about creation of this cyber range - https://github.com/austrisu/master_thesis
 
 
 
