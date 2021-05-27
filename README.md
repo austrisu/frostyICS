@@ -134,7 +134,7 @@ Additional information about used software in in the project:
 
 FrostyICS was used to perform training. Information about test scenario and execution principles can be found in:
 
--  [excersise-scenario.md](docs\test-excersise\excersise-scenario.md) 
+-  [excersise-scenario.md](excersise-scenario.md) 
 - https://github.com/austrisu/master_thesis (chapter 4.)
 
 # Resources
